@@ -7,10 +7,13 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 var renderTarget = new THREE.WebGLRenderTarget(window.innerWidth, window.innerHeight);
 
-var geometry = new THREE.PlaneGeometry(1.0, 1.0);
+camera.translateZ(1.2);
+var geometry = new THREE.BoxGeometry(1.0, 1.0);
 var material = new THREE.MeshBasicMaterial({
+    color:"#a0f0f0",
 });
 var mesh = new THREE.Mesh(geometry, material);
+
 scene.add(mesh);
 
 renderer.render(scene, camera, renderTarget);
@@ -24,8 +27,11 @@ window.addEventListener('resize', function(){
 });
 
 //refresh loop
+const clock = new THREE.Clock();
 function animate() {
-	requestAnimationFrame( animate );
+    let delta = clock.getDelta();
+    mesh.rotateX(delta*-0.5);
 	renderer.render( scene, camera );
+    requestAnimationFrame( animate );
 }
 animate();
