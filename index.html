@@ -5,11 +5,39 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ascendev</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
+  <style>
+    h1{
+      color: white;
+      height: 100%;
+      width: 100%;
+      position:absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      z-index: 2;
+    }
+
+    canvas {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    body{
+        overflow: hidden;
+        height:80vh;
+    }
+  </style>
 </head>
 <body>
-    <canvas id="canvastropcool"></canvas>
-	<h1>Work In Progress</h1>
+  <canvas id="canvastropcool"></canvas>
+  <h1>Work In Progress</h1>
 </body>
 </html>

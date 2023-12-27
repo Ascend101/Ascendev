@@ -10,7 +10,7 @@ var renderTarget = new THREE.WebGLRenderTarget(window.innerWidth, window.innerHe
 camera.translateZ(1.2);
 var geometry = new THREE.BoxGeometry(1.0, 1.0);
 var material = new THREE.MeshBasicMaterial({
-    color:"#a0f0f0",
+    color:"#c0c0c0",
 });
 var mesh = new THREE.Mesh(geometry, material);
 
