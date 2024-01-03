@@ -31,9 +31,20 @@ window.addEventListener('resize', function(){
 
 //refresh loop
 const clock = new THREE.Clock();
+let randX = Math.random()*2 - 1;
+let randY = Math.random()*2 - 1;
+let timer = 0.0;
+let delta = 0.0;
 function animate() {
-  let delta = clock.getDelta();
-  mesh.rotateX(delta*-0.5);
+  delta = clock.getDelta();
+  timer += delta;
+  if (timer > 10.0){
+    randX = Math.random()*2 - 1;
+    randY = Math.random()*2 - 1;
+    timer = 0;
+  }
+  points.rotateY(delta * 0.01 * randX);
+  points.rotateX(delta * 0.01 * randY);
   renderer.render( scene, camera );
   requestAnimationFrame( animate );
 }
