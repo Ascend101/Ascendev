@@ -8,36 +8,52 @@
   <link rel="stylesheet" href="style.css">
   <script type="module" src="script.js"></script>
   <style>
-    h1{
-      color: white;
-      height: 100%;
-      width: 100%;
-      position:absolute;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      z-index: 2;
-    }
-
     canvas {
       width: 100vw;
       height: 100vh;
-      display: block;
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
-      z-index: 0;
+      z-index: -9999;
+    }
+    .wrapper {
+      height: 90vh;
+      z-index: 2;
+      /*This part is important for centering*/
+      display: grid;
+      place-items: center;
     }
 
-    body{
-        overflow: hidden;
-        height:80vh;
+    .typing {
+      color:white;
+      width: 13ch;
+      animation: typing 2s steps(13), blink .5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid;
+      font-family: monospace;
+      font-size: 2em;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0
+      }
+    }
+        
+    @keyframes blink {
+      50% {
+        border-color: transparent
+      }
     }
   </style>
 </head>
 <body>
-  <canvas id="canvastropcool"></canvas>
-  <h1>Work In Progress</h1>
+  <canvas id="canvatropcool"></canvas>
+  <div class="wrapper">
+    <div class="typing">
+      Working on it
+    </div>
+  </div>
 </body>
 </html>
