@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="style.css">
   <script type="module" src="script.js"></script>
   <style>
+    html{
+      overflow: hidden;
+      background: #180614; /* Old browsers */
+    }
     canvas {
       width: 100vw;
       height: 100vh;
@@ -17,7 +21,7 @@
       z-index: -9999;
     }
     .wrapper {
-      height: 90vh;
+      height: 100vh;
       z-index: 2;
       /*This part is important for centering*/
       display: grid;
@@ -40,7 +44,6 @@
         width: 0
       }
     }
-        
     @keyframes blink {
       50% {
         border-color: transparent

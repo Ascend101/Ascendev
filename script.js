@@ -2,7 +2,7 @@ import * as THREE from "three";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(90, window.innerWidth/window.innerHeight, 0.01, 1000);
-const renderer = new THREE.WebGLRenderer({canvas:canvatropcool});
+const renderer = new THREE.WebGLRenderer({canvas:canvatropcool, alpha:true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 camera.translateZ(1.2);
@@ -16,7 +16,7 @@ for ( let i = 0; i < 10000; i ++ ) {
 }
 const geometry = new THREE.BufferGeometry();
 geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );
-const material = new THREE.PointsMaterial( { color: 0x888888 } );
+const material = new THREE.PointsMaterial( { color: 0xFFFFFF } );
 const points = new THREE.Points( geometry, material );
 scene.add(points);
 
